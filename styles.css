@@ -461,7 +461,8 @@ nav ul li a:hover:after {
 .processo:before {
     content: '';
     position: absolute;
-    top: 70px;
+    /* Alteração aqui: ajustado para alinhar com o centro dos ícones */
+    top: 100px; 
     left: 60px;
     right: 60px;
     height: 4px;
