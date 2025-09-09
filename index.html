@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <div class="container">
             <div class="logo">
@@ -29,7 +28,6 @@
         </div>
     </header>
 
-    <!-- Seção Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -41,7 +39,6 @@
         <div class="wave-divider"></div>
     </section>
 
-    <!-- Seção Sobre -->
     <section id="sobre" class="sobre">
         <div class="container">
             <h2>A PONTE PARA O SUCESSO DO SEU NEGÓCIO</h2>
@@ -91,7 +88,6 @@
         <div class="wave-divider"></div>
     </section>
 
-    <!-- Seção Benefícios -->
     <section id="beneficios" class="beneficios">
         <div class="container">
             <h2>POR QUE ESCOLHER A ESPIRAL CONSULTORIA?</h2>
@@ -132,7 +128,6 @@
         <div class="wave-divider"></div>
     </section>
 
-    <!-- Seção Soluções -->
     <section id="solucoes" class="solucoes">
         <div class="container">
             <h2>NOSSAS SOLUÇÕES INTEGRADAS</h2>
@@ -186,7 +181,6 @@
         <div class="wave-divider"></div>
     </section>
 
-    <!-- Seção Como Funciona -->
     <section id="como-funciona" class="como-funciona">
         <div class="container">
             <h2>COMO TRABALHAMOS</h2>
@@ -228,7 +222,6 @@
         <div class="wave-divider"></div>
     </section>
 
-    <!-- Seção Formulário de Contato -->
     <section id="contato" class="contato">
         <div class="container">
             <div class="contato-content">
@@ -269,22 +262,23 @@
                             <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required>
                         </div>
                         <div class="form-group">
+                            <label for="interesse">Área de interesse</label>
+                            <select id="interesse" name="interesse" required>
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="energia">Mercado Livre de Energia</option>
+                                <option value="assinatura">Energia por Assinatura</option>
+                                <option value="financeira">Assessoria Financeira</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="consumo-group">
                             <label for="consumo">Consumo médio mensal de energia</label>
-                            <select id="consumo" name="consumo" required>
+                            <select id="consumo" name="consumo">
                                 <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="1000-2000">Entre R$1.000 e R$2.000</option>
                                 <option value="2000-3000">Entre R$2.000 e R$3.000</option>
                                 <option value="3000-4000">Entre R$3.000 e R$4.000</option>
                                 <option value="4000-5000">Entre R$4.000 e R$5.000</option>
                                 <option value="5000+">Acima de R$5.000</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="interesse">Área de interesse</label>
-                            <select id="interesse" name="interesse" required>
-                                <option value="" disabled selected>Selecione uma opção</option>
-                                <option value="energia">Mercado Livre de Energia</option>
-                                <option value="assinatura">Energia por Assinatura</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-form">SOLICITAR SIMULAÇÃO GRATUITA</button>
@@ -295,7 +289,6 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -314,7 +307,7 @@
                     <p><i class="fas fa-phone"></i> (41) 99134-2833</p>
                     <p><i class="fas fa-envelope"></i> wilson@espiralconsultoria.com.br</p>
                     <div class="social-media">
-                        <a href="https://www.instagram.com/espiral.consultoria" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>                        
+                        <a href="https://www.instagram.com/espiral.consultoria" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/antonio-wilson-curce-291014a6/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
