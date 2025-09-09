@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Header fixo com mudança de estilo ao rolar
     const header = document.querySelector('header');
-    const heroSection = document.querySelector('.hero');
-    
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -31,10 +29,30 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
     });
-    
+
+    // --- NOVA LÓGICA DO FORMULÁRIO ---
+    const interesseSelect = document.getElementById('interesse');
+    const consumoGroup = document.getElementById('consumo-group');
+    const consumoSelect = document.getElementById('consumo');
+
+    // Ocultar o campo de consumo inicialmente
+    consumoGroup.style.display = 'none';
+
+    interesseSelect.addEventListener('change', function() {
+        const selectedValue = this.value;
+
+        if (selectedValue === 'energia' || selectedValue === 'assinatura') {
+            consumoGroup.style.display = 'block';
+            consumoSelect.setAttribute('required', 'required');
+        } else {
+            consumoGroup.style.display = 'none';
+            consumoSelect.removeAttribute('required');
+            consumoSelect.value = ''; // Limpa o valor caso o usuário mude de ideia
+        }
+    });
+
     // Validação do formulário
     const form = document.getElementById('form-contato');
-    
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -73,6 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Simulação de processamento
                 setTimeout(() => {
                     form.reset();
+                    // Re-ocultar campo de consumo após resetar o form
+                    consumoGroup.style.display = 'none';
+                    consumoSelect.removeAttribute('required');
+
                     submitButton.textContent = 'Enviado com sucesso!';
                     
                     // Restaurar botão após alguns segundos
@@ -82,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 3000);
                     
                     // Exibir mensagem de sucesso
-                    alert('Obrigado pelo seu interesse! Entraremos em contato em breve com sua simulação personalizada.');
+                    alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
                 }, 1500);
             }
         });
@@ -100,10 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animações ao rolar (opcional - pode ser implementado com bibliotecas como AOS)
+    // Animações ao rolar (opcional)
     const animatedElements = document.querySelectorAll('.beneficio-card, .solucao-card, .processo-item, .valor-item');
     
-    // Função simples para verificar se elemento está visível na viewport
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -111,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-    // Adicionar classe para animar elementos quando visíveis
     function handleScrollAnimation() {
         animatedElements.forEach(el => {
             if (isElementInViewport(el) && !el.classList.contains('animated')) {
@@ -120,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Verificar elementos visíveis no carregamento e ao rolar
     window.addEventListener('scroll', handleScrollAnimation);
     window.addEventListener('load', handleScrollAnimation);
 });
